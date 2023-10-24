@@ -9,8 +9,16 @@ html, body {
 :root {
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF; 
+  font-size: 20px;
 }
 a {
   color: #049DBF;
   text-decoration: underline;
+}
+
+h1 {
+  color: #049DBF;
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 0.5em;
 }

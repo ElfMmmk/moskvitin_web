@@ -1,0 +1,21 @@
+.feedback {
+  background: #0F0F0F;
+  display: flex;
+}
+.feedback__user {
+  display: flex;
+  width: 33.3333%;
+  padding: 12px;
+  flex-direction: column;
+}
+.feedback__name {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.feedback__text {
+  padding: 12px 12px 12px 0;
+  width: 66.6666%;
+}
