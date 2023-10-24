@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    networks:
+      - custom_network
+    logging:
+        driver: 'none'
+    restart: always
+    ports:
+        - 1025:1025 # smtp server
+        - 8025:8025 # web ui
   api:
     build:
       context: ./backend
