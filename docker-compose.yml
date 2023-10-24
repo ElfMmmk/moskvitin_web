@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    container_name: 'api'
+    networks:
+      - custom_network
+    volumes:
+      - ./backend/db.sqlite3:/db.sqlite3
+      - ./backend/static:/static
+      - ./backend/media:/media
+    restart: always
+    ports:
+      - 8080:8000
+  client:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    container_name: 'client'
+    networks:
+      - custom_network
+    restart: always
+    ports:
+      - 8030:3000
+    depends_on:
+      - api
+networks:
+  custom_network:
+    driver: bridge
