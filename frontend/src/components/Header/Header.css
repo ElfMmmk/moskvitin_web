@@ -1,0 +1,26 @@
+.header {
+  background: #0D0D0D;
+  height: 78px;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu {
+  margin-left: 65px;
+  display: flex;
+  gap: 20px;
+}
+
+.header__manage {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu__item {
+  white-space: nowrap;
+}
