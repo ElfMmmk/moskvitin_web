@@ -58,3 +58,13 @@ class Movie(models.Model):
     class Meta:
         verbose_name = 'Фильм'
         verbose_name_plural = 'Фильмы'
+
+class Visit(models.Model):
+    user = models.ForeignKey(to=User, verbose_name="Пользователь", on_delete=models.CASCADE, null=True)
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Дата посещения")
+    url = models.URLField(max_length=255, verbose_name="Адрес страницы")
+    method = models.CharField(max_length=20, verbose_name="Метод")
+
+    class Meta:
+        verbose_name = 'Посещение'
+        verbose_name_plural = 'Посещения'
