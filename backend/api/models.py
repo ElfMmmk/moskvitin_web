@@ -51,3 +51,10 @@ class Movie(models.Model):
     age = models.PositiveIntegerField(verbose_name='Возраст')
     duration = models.PositiveIntegerField(verbose_name='Длительность (в минутах)')
     actors = models.TextField(verbose_name='Актеры')
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Фильм'
+        verbose_name_plural = 'Фильмы'
