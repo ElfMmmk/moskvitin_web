@@ -23,6 +23,51 @@ services:
     ports:
         - 1025:1025 # smtp server
         - 8025:8025 # web ui
+  celery:
+    build: ./backend
+    container_name: celery
+    networks:
+      - custom_network
+    command: celery -A core worker -B
+    restart: always
+    volumes:
+      - ./backend/db.sqlite3:/db.sqlite3
+    links:
+      - "redis"
+    depends_on:
+      - api
+      - redis
+  celery-beat:
+    build: ./backend
+    container_name: celery-beat
+    networks:
+      - custom_network
+    command: celery -A core beat -l info
+    volumes:
+      - ./backend/db.sqlite3:/db.sqlite3
+    restart: always
+    links:
+      - "redis"
+    depends_on:
+      - celery
+      - api
+      - redis
+  flower:
+    build: ./backend
+    container_name: flower
+    command: celery -A core flower -l info
+    networks:
+      - custom_network
+    ports:
+      - 5557:5555
+    links:
+      - "redis"
+    restart: always
+    depends_on:
+      - celery
+      - celery-beat
+      - redis
+      - api
   api:
     build:
       context: ./backend
