@@ -1,6 +1,6 @@
 import './Input.css'
 
-export interface InputProps extends React.PropsWithChildren, React.HTMLAttributes<HTMLElement> {
+export interface InputProps extends React.PropsWithChildren {
   className?: string
 }
 
