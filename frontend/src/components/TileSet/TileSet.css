@@ -1,0 +1,21 @@
+.tileset {
+  margin-top: 15px;
+  display: grid;
+  gap: 2em 15px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+}
+.tileset__tile {
+  border: 1px solid rgb(57, 57, 57);
+  cursor: pointer;
+}
+.tile__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.tile__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

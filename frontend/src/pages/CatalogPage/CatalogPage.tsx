@@ -3,6 +3,7 @@ import Container from '@components/Container/Container'
 import Footer from '@components/Footer/Footer'
 import Button from '@components/Button/Button'
 import Slider from '@components/Slider/Slider'
+import TileSet from '@components/TileSet/TileSet'
 import { ButtonStyles } from '@/types/ButtonStyles'
 import './CatalogPage.css'
 
@@ -34,6 +35,7 @@ const CatalogPage = () => {
             </Button>
           </div>
           <Slider />
+          <TileSet />
         </main>
       </Container>
       <Footer />
