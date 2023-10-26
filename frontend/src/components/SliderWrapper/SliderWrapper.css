@@ -1,0 +1,26 @@
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.slider-wrapper__nav {
+  cursor: pointer;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.265);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-wrapper__wrapper {
+  transition: transform 0.3s;
+}
+.slider-wrapper__nav--prev {
+  left: 0;
+}
+.slider-wrapper__nav--next {
+  right: 0;
+  transform: rotate(180deg);
+}
