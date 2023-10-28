@@ -6,5 +6,6 @@ RUN  pip install --upgrade pip \
     pip install -r requirements.txt
 COPY . .
 EXPOSE 8000
-RUN ["chmod", "+x", "docker-entrypoint.sh"]
-ENTRYPOINT [ "./docker-entrypoint.sh" ]
+ENTRYPOINT [ "sh", "entrypoint.sh" ]
+# RUN ["chmod", "+x", "docker-entrypoint.sh"]
+# ENTRYPOINT [ "./docker-entrypoint.sh" ]

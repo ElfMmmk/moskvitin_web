@@ -7,7 +7,7 @@ const TileSet = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/api/v1/movies/')
+      .get('http://localhost:8080/api/v1/movies/')
       .then(res => setMovies(res.data))
   }, [])
   
